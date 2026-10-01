@@ -1,9 +1,13 @@
 {
-  "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/about.html", "destination": "/about", "permanent": true },
+    { "source": "/collections.html", "destination": "/collections", "permanent": true },
+    { "source": "/inspiration.html", "destination": "/inspiration", "permanent": true },
+    { "source": "/contact.html", "destination": "/contact", "permanent": true },
     {
-      "source": "/collection",
+      "source": "/collection.html",
       "has": [
         {
           "type": "query",
@@ -14,16 +18,13 @@
       "destination": "/collections/:id",
       "permanent": true
     },
-    {
-      "source": "/collection",
-      "destination": "/collections",
-      "permanent": true
-    }
+    { "source": "/collection.html", "destination": "/collections", "permanent": true }
   ],
   "rewrites": [
-    {
-      "source": "/collections/:id",
-      "destination": "/collection.html"
-    }
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/collections/:id", "destination": "/collection.html" },
+    { "source": "/collections", "destination": "/collections.html" },
+    { "source": "/inspiration", "destination": "/inspiration.html" },
+    { "source": "/contact", "destination": "/contact.html" }
   ]
 }
