@@ -1,0 +1,16 @@
+RewriteEngine On
+
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^about\.html$ /about [R=301,L]
+RewriteRule ^collections\.html$ /collections [R=301,L,QSA]
+RewriteRule ^inspiration\.html$ /inspiration [R=301,L,QSA]
+RewriteRule ^contact\.html$ /contact [R=301,L]
+RewriteCond %{QUERY_STRING} (?:^|&)id=([^&]+)
+RewriteRule ^collection\.html$ /collections/%1? [R=301,L]
+RewriteRule ^collection\.html$ /collections [R=301,L]
+
+RewriteRule ^about/?$ about.html [L]
+RewriteRule ^collections/?$ collections.html [QSA,L]
+RewriteRule ^collections/([^/]+)/?$ collection.html [L]
+RewriteRule ^inspiration/?$ inspiration.html [QSA,L]
+RewriteRule ^contact/?$ contact.html [L]

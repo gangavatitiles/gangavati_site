@@ -1,0 +1,13 @@
+/index.html                /                      301
+/about.html                /about                 301
+/collections.html          /collections           301
+/inspiration.html          /inspiration           301
+/contact.html              /contact               301
+/collection.html  id=:id  /collections/:id       301
+/collection.html           /collections           301
+
+/about                     /about.html            200
+/collections               /collections.html      200
+/collections/*             /collection.html       200
+/inspiration               /inspiration.html      200
+/contact                   /contact.html          200

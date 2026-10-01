@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101419">
+  <script src="/assets/js/theme-init.js"></script>
+  <script>
+    (function () {
+      var known = {
+        "marble-look": "Marble Look",
+        "stone-look": "Stone Look",
+        "wood-look": "Wood Look",
+        "contemporary-patterns": "Contemporary Patterns"
+      };
+      var params = new URLSearchParams(location.search);
+      var parts = location.pathname.split("/").filter(Boolean);
+      var id = params.get("id");
+      if (!id && parts[0] === "collections" && parts[1]) id = decodeURIComponent(parts[1]);
+      var mode = "all";
+      if (id && known[id]) mode = id;
+      else if (id) mode = "missing";
+      document.documentElement.setAttribute("data-collection", mode);
+      var title = mode === "missing" ? "Collection not found" : (known[mode] || "All collections");
+      document.title = title + " | Gangavati Tiles";
+    })();
+  </script>
+  <title>Collection | Gangavati Tiles</title>
+  <meta name="description" content="Collection details from Gangavati Tiles. Specifications are confirmed at the Mira Road East showroom.">
+  <link rel="canonical" href="https://www.gangavatitiles.com/collections">
+  <meta property="og:title" content="Collection | Gangavati Tiles">
+  <meta property="og:description" content="View a Gangavati Tiles collection and enquire with the showroom.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.gangavatitiles.com/collections">
+  <script>
+    (function () {
+      var mode = document.documentElement.getAttribute("data-collection");
+      var publicPath = mode && mode !== "all" && mode !== "missing" ? "/collections/" + mode : "/collections";
+      var canon = document.querySelector('link[rel="canonical"]');
+      var og = document.querySelector('meta[property="og:url"]');
+      if (canon) canon.setAttribute("href", "https://www.gangavatitiles.com" + publicPath);
+      if (og) og.setAttribute("content", "https://www.gangavatitiles.com" + publicPath);
+    })();
+  </script>
+  <meta property="og:image" content="https://www.gangavatitiles.com/assets/images/og-cover.jpg">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script src="/assets/js/config.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/animations.js" defer></script>
+  <script src="/assets/js/collections.js" defer></script>
+  <script src="/assets/js/gallery.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="/"><img src="/assets/images/logo.png" alt="Gangavati Tiles" width="927" height="446"></a>
+      <nav class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/collections" aria-current="page">Collections</a></li>
+          <li><a href="/inspiration">Inspiration</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-tools">
+        <a class="btn btn--header" href="/contact"><span class="wide-label">Visit Showroom</span><span class="short-label">Visit</span></a>
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to light theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M4.8 4.8l1.6 1.6M17.6 17.6l1.6 1.6M19.2 4.8l-1.6 1.6M6.4 17.6l-1.6 1.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 3.2a7.2 7.2 0 1 0 5.4 12.1A7.6 7.6 0 0 1 15.5 3.2z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </button>
+        <button type="button" class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span class="menu-toggle__bars"></span></button>
+      </div>
+    </div>
+  </header>
+  <div id="mobile-menu" class="mobile-menu" data-mobile-menu>
+    <nav aria-label="Mobile">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/collections">Collections</a></li>
+        <li><a href="/inspiration">Inspiration</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--primary" href="/contact">Visit Showroom</a>
+  </div>
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow">Collection</p>
+        <h1 id="collection-heading">Collection</h1>
+        <p class="lede" id="collection-lead">Demonstration category. Ask the showroom for current availability.</p>
+        <script>
+          (function () {
+            var names = {
+              "marble-look": ["Marble Look", "A veined, polished direction for bathrooms, living rooms, and quieter commercial spaces."],
+              "stone-look": ["Stone Look", "A honed, mineral direction for floors, walls, and outdoor-facing rooms."],
+              "wood-look": ["Wood Look", "A timber-coloured direction for living rooms and kitchens."],
+              "contemporary-patterns": ["Contemporary Patterns", "Geometry and repeat for rooms that want a clearer rhythm."]
+            };
+            var mode = document.documentElement.getAttribute("data-collection");
+            var heading = document.getElementById("collection-heading");
+            var lead = document.getElementById("collection-lead");
+            if (mode === "missing") {
+              heading.textContent = "Collection not found";
+              lead.textContent = "That collection is not in the current demonstration catalogue.";
+            } else if (names[mode]) {
+              heading.textContent = names[mode][0];
+              lead.textContent = names[mode][1];
+            } else {
+              heading.textContent = "All collections";
+              lead.textContent = "Every demonstration collection is listed below. Open one for its gallery and enquiry link.";
+            }
+          })();
+        </script>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <article class="collection-panel" id="marble-look" data-name="Marble Look">
+        <div class="detail-grid">
+          <div class="detail-gallery" data-lightbox-group>
+            <button type="button" data-lightbox data-caption="White marble bathroom — visual reference">
+              <img src="/assets/images/marble-white-1800.webp" srcset="/assets/images/marble-white-960.webp 960w, /assets/images/marble-white-1800.webp 1800w" sizes="(min-width: 900px) 62vw, 100vw" width="1800" height="1200" alt="White marble bathroom">
+            </button>
+            <button type="button" data-lightbox data-caption="Pale marble-look shower floor">
+              <img src="/assets/images/marble-floor-1800.webp" srcset="/assets/images/marble-floor-960.webp 960w, /assets/images/marble-floor-1800.webp 1800w" sizes="(min-width: 900px) 22vw, 100vw" width="1800" height="1200" alt="Pale marble-look floor tiles">
+            </button>
+            <button type="button" data-lightbox data-caption="Grey marble bathroom">
+              <img src="/assets/images/marble-bath-1800.webp" srcset="/assets/images/marble-bath-960.webp 960w, /assets/images/marble-bath-1800.webp 1800w" sizes="(min-width: 900px) 22vw, 100vw" width="1800" height="2400" alt="Grey marble bathroom with a freestanding bath">
+            </button>
+          </div>
+          <div class="detail-copy">
+            <h2 class="collection-name">Marble Look</h2>
+            <p>A demonstration category for veined surfaces. It is often considered where a room should feel lighter and more formal. Nothing here is a measured product specification.</p>
+            <dl class="spec-list">
+              <div><dt>Finish</dt><dd>Polished — demonstration label only</dd></div>
+              <div><dt>Colour</dt><dd>White and grey — demonstration groups</dd></div>
+              <div><dt>Sizes</dt><dd>Not supplied. Ask the showroom for current sizes.</dd></div>
+              <div><dt>Applications</dt><dd>Living rooms, bathrooms, and commercial interiors are the intended starting points.</dd></div>
+            </dl>
+            <a class="btn btn--primary" data-enquire href="https://wa.me/919324210777?text=Hello%20Gangavati%20Tiles%2C%20I%20would%20like%20to%20enquire%20about%20the%20Marble%20Look%20collection." target="_blank" rel="noopener">Enquire About This Collection</a>
+            <div class="related">
+              <a href="/collections/stone-look">Stone Look</a>
+              <a href="/collections/contemporary-patterns">Contemporary Patterns</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="collection-panel" id="stone-look" data-name="Stone Look">
+        <div class="detail-grid">
+          <div class="detail-gallery">
+            <button type="button" data-lightbox data-caption="Large grey stone-look tiles">
+              <img src="/assets/images/stone-tiles-1800.webp" srcset="/assets/images/stone-tiles-960.webp 960w, /assets/images/stone-tiles-1800.webp 1800w" sizes="(min-width: 900px) 62vw, 100vw" width="1800" height="1198" alt="Close view of large grey tiles">
+            </button>
+            <button type="button" data-lightbox data-caption="Honed stone wall">
+              <img src="/assets/images/wood-living-1800.webp" srcset="/assets/images/wood-living-960.webp 960w, /assets/images/wood-living-1800.webp 1800w" sizes="(min-width: 900px) 22vw, 100vw" width="1800" height="2700" alt="Chairs set against a honed stone wall">
+            </button>
+            <button type="button" data-lightbox data-caption="Commercial interior with a broad pale floor">
+              <img src="/assets/images/space-commercial-1800.webp" srcset="/assets/images/space-commercial-960.webp 960w, /assets/images/space-commercial-1800.webp 1800w" sizes="(min-width: 900px) 22vw, 100vw" width="1800" height="1202" alt="Commercial interior with a large pale floor">
+            </button>
+          </div>
+          <div class="detail-copy">
+            <h2 class="collection-name">Stone Look</h2>
+            <p>A demonstration category for mineral, honed surfaces. Useful to discuss for floors that should feel quiet rather than glossy.</p>
+            <dl class="spec-list">
+              <div><dt>Finish</dt><dd>Honed — demonstration label only</dd></div>
+              <div><dt>Colour</dt><dd>Grey and beige — demonstration groups</dd></div>
+              <div><dt>Sizes</dt><dd>Not supplied. Ask the showroom for current sizes.</dd></div>
+              <div><dt>Applications</dt><dd>Living rooms, outdoor-facing spaces, and commercial floors are the intended starting points.</dd></div>
+            </dl>
+            <a class="btn btn--primary" data-enquire href="https://wa.me/919324210777?text=Hello%20Gangavati%20Tiles%2C%20I%20would%20like%20to%20enquire%20about%20the%20Stone%20Look%20collection." target="_blank" rel="noopener">Enquire About This Collection</a>
+            <div class="related">
+              <a href="/collections/marble-look">Marble Look</a>
+              <a href="/collections/wood-look">Wood Look</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="collection-panel" id="wood-look" data-name="Wood Look">
+        <div class="detail-grid">
+          <div class="detail-gallery">
+            <button type="button" data-lightbox data-caption="Living room with a wood floor">
+              <img src="/assets/images/space-living-1800.webp" srcset="/assets/images/space-living-960.webp 960w, /assets/images/space-living-1800.webp 1800w" sizes="(min-width: 900px) 62vw, 100vw" width="1800" height="950" alt="Living room with a warm wood floor">
+            </button>
+            <button type="button" data-lightbox data-caption="Pale wood-look floor">
+              <img src="/assets/images/wood-planks-1800.webp" srcset="/assets/images/wood-planks-960.webp 960w, /assets/images/wood-planks-1800.webp 1800w" sizes="(min-width: 900px) 22vw, 100vw" width="1800" height="1202" alt="Pale wood-look floor in a sitting room">
+            </button>
+            <button type="button" data-lightbox data-caption="Kitchen with a wood floor">
+              <img src="/assets/images/inspire-kitchen-1-1800.webp" srcset="/assets/images/inspire-kitchen-1-960.webp 960w, /assets/images/inspire-kitchen-1-1800.webp 1800w" sizes="(min-width: 900px) 22vw, 100vw" width="1800" height="2400" alt="Kitchen with a wood floor and tiled walls">
+            </button>
+          </div>
+          <div class="detail-copy">
+            <h2 class="collection-name">Wood Look</h2>
+            <p>A demonstration category for timber colour and grain. It is a way to talk about warmth in living rooms and kitchens, not a claim about a specific board.</p>
+            <dl class="spec-list">
+              <div><dt>Finish</dt><dd>Matte — demonstration label only</dd></div>
+              <div><dt>Colour</dt><dd>Brown — demonstration group</dd></div>
+              <div><dt>Sizes</dt><dd>Not supplied. Ask the showroom for current sizes.</dd></div>
+              <div><dt>Applications</dt><dd>Living rooms and kitchens are the intended starting points.</dd></div>
+            </dl>
+            <a class="btn btn--primary" data-enquire href="https://wa.me/919324210777?text=Hello%20Gangavati%20Tiles%2C%20I%20would%20like%20to%20enquire%20about%20the%20Wood%20Look%20collection." target="_blank" rel="noopener">Enquire About This Collection</a>
+            <div class="related">
+              <a href="/collections/stone-look">Stone Look</a>
+              <a href="/collections/marble-look">Marble Look</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="collection-panel" id="contemporary-patterns" data-name="Contemporary Patterns">
+        <div class="detail-grid">
+          <div class="detail-gallery">
+            <button type="button" data-lightbox data-caption="Geometric marble floor">
+              <img src="/assets/images/pattern-floor-1800.webp" srcset="/assets/images/pattern-floor-960.webp 960w, /assets/images/pattern-floor-1800.webp 1800w" sizes="(min-width: 900px) 62vw, 100vw" width="1800" height="2400" alt="Geometric pattern in marble and stone">
+            </button>
+            <button type="button" data-lightbox data-caption="Chequered bathroom floor">
+              <img src="/assets/images/hero-bath-1800.webp" srcset="/assets/images/hero-bath-960.webp 960w, /assets/images/hero-bath-1800.webp 1800w" sizes="(min-width: 900px) 22vw, 100vw" width="1800" height="2698" alt="Bathroom with a black and white chequered floor">
+            </button>
+            <button type="button" data-lightbox data-caption="White tiled shower">
+              <img src="/assets/images/inspire-bath-1-1800.webp" srcset="/assets/images/inspire-bath-1-960.webp 960w, /assets/images/inspire-bath-1-1800.webp 1800w" sizes="(min-width: 900px) 22vw, 100vw" width="1800" height="1200" alt="Bathroom with white wall tile and a glass shower">
+            </button>
+          </div>
+          <div class="detail-copy">
+            <h2 class="collection-name">Contemporary Patterns</h2>
+            <p>A demonstration category for repeat, contrast, and geometry. Use it to start a conversation about floors and walls that need a stronger rhythm.</p>
+            <dl class="spec-list">
+              <div><dt>Finish</dt><dd>Polished — demonstration label only</dd></div>
+              <div><dt>Colour</dt><dd>White and grey — demonstration groups</dd></div>
+              <div><dt>Sizes</dt><dd>Not supplied. Ask the showroom for current sizes.</dd></div>
+              <div><dt>Applications</dt><dd>Bathrooms, kitchens, and living rooms are the intended starting points.</dd></div>
+            </dl>
+            <a class="btn btn--primary" data-enquire href="https://wa.me/919324210777?text=Hello%20Gangavati%20Tiles%2C%20I%20would%20like%20to%20enquire%20about%20the%20Contemporary%20Patterns%20collection." target="_blank" rel="noopener">Enquire About This Collection</a>
+            <div class="related">
+              <a href="/collections/marble-look">Marble Look</a>
+              <a href="/collections/wood-look">Wood Look</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <section class="collection-missing missing-panel">
+        <h2>This collection is not listed.</h2>
+        <p class="lede">The link may be out of date, or the catalogue has not been updated yet.</p>
+        <a class="btn btn--primary" href="/collections" style="margin-top:1.25rem;">View all collections</a>
+      </section>
+    </div>
+  </main>
+  <dialog class="lightbox" data-lightbox-dialog aria-label="Image preview">
+    <button type="button" class="lightbox__close" data-lightbox-close aria-label="Close image">×</button>
+    <button type="button" class="lightbox__prev" data-lightbox-prev aria-label="Previous image">‹</button>
+    <button type="button" class="lightbox__next" data-lightbox-next aria-label="Next image">›</button>
+    <div class="lightbox__frame">
+      <img data-lightbox-image alt="">
+      <p class="lightbox__caption" data-lightbox-caption></p>
+    </div>
+  </dialog>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <img class="footer-logo" src="/assets/images/logo.png" alt="Gangavati Tiles" width="927" height="446">
+        <p>A tiles showroom in Mira Road East for homes and commercial spaces.</p>
+      </div>
+      <div>
+        <p class="footer-label">Navigate</p>
+        <nav class="footer-nav" aria-label="Footer">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/collections">Collections</a></li>
+            <li><a href="/inspiration">Inspiration</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div>
+        <p class="footer-label">Showroom</p>
+        <p>Shop No.6, New Poonam Regency CHS, MTNL Rd, nr. DCB BANK, Sai Baba Nagar, Mira Road East, Mira Bhayandar, Maharashtra 401107</p>
+        <p><a href="tel:+919324210777">093242 10777</a></p>
+        <p class="hours-pending">Opening hours to be confirmed</p>
+        <ul class="social-list" data-social-list hidden></ul>
+      </div>
+    </div>
+    <div class="wrap fine-print"><p>© 2026 Gangavati Tiles</p><p>Mira Road East, Maharashtra</p></div>
+  </footer>
+  <a class="whatsapp-float" href="https://wa.me/919324210777?text=Hello%20Gangavati%20Tiles%2C%20I%20would%20like%20to%20enquire%20about%20tiles." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18.5 4.5 21l2.2-1.2A8.5 8.5 0 1 0 6 18.5z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9 10.5c.2 1.6 1.8 3.2 3.4 3.5.4 0 .8-.2 1-.5l.6-1.1-1.6-.7-.4.5c-.7-.3-1.4-1-1.7-1.7l.5-.4-.7-1.6-1.1.6c-.3.2-.5.6-.4 1z" fill="currentColor"/></svg>
+    <span>WhatsApp</span>
+  </a>
+</body>
+</html>
