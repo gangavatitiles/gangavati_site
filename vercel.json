@@ -1,0 +1,29 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/collection",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "(?<id>[^&]+)"
+        }
+      ],
+      "destination": "/collections/:id",
+      "permanent": true
+    },
+    {
+      "source": "/collection",
+      "destination": "/collections",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/collections/:id",
+      "destination": "/collection.html"
+    }
+  ]
+}

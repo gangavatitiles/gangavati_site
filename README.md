@@ -27,7 +27,7 @@ Open [http://127.0.0.1:8080](http://127.0.0.1:8080). The address bar uses page n
 
 Upload the folder to a static host. Do not run a compiler. Point the host at this directory so `index.html` is the default document.
 
-Apache reads `.htaccess`. Netlify and Cloudflare Pages read `_redirects`. Both map the same names as `serve.py`.
+Apache reads `.htaccess`. Netlify and Cloudflare Pages read `_redirects`. Vercel reads `vercel.json`. All three map the same names as `serve.py`.
 
 Do not change DNS or publish to a live domain unless you mean to.
 
